@@ -33,10 +33,10 @@ button {
 
 .poster {
   position: relative;
-  width: min(100vw, 80.031vh);
-  height: min(100vh, 124.951vw);
-  max-width: 513px;
-  max-height: 641px;
+  width: min(100vw);
+  height: min(100vh);
+  /* max-width: 513px; */
+  /* max-height: 641px; */
   overflow: hidden;
   isolation: isolate;
   background: #02040a;
@@ -170,8 +170,8 @@ button {
   border: 1.5px solid #ffffff;
   color: white;
   font-family: "Montserrat", sans-serif;
-  font-weight: 900;
-  font-size: 0.52rem;
+  font-weight: 700;
+  font-size: 0.45rem;
   line-height: 1;
   letter-spacing: 0.04em;
   white-space: nowrap;
@@ -244,7 +244,7 @@ button {
 .deal-copy--restaurants .amount {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   line-height: 0.85;
   color: #ffffff;
   -webkit-text-stroke: 1.8px #081033;
@@ -254,7 +254,7 @@ button {
 .deal-copy--restaurants .off {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   line-height: 0.85;
   color: #ffe600;
   -webkit-text-stroke: 1.8px #081033;
@@ -273,7 +273,7 @@ button {
 .deal-copy--beauty span:first-child {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   line-height: 0.95;
   color: #ffffff;
   -webkit-text-stroke: 1.8px #081033;
@@ -283,7 +283,7 @@ button {
 .deal-copy--beauty span:last-child {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.35rem;
+  font-size: 1.22rem;
   line-height: 0.95;
   color: #ffffff;
   -webkit-text-stroke: 1.8px #081033;
@@ -292,7 +292,7 @@ button {
 
 .deal-copy--home {
   font-family: "Yellowtail", cursive;
-  font-size: 3.1rem;
+  font-size: 2.6rem;
   font-weight: 400;
   text-transform: none;
   color: #ffffff;
@@ -313,7 +313,7 @@ button {
 .deal-copy--coffee span:first-child {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.45rem;
+  font-size: 1.15rem;
   line-height: 0.95;
   color: #ffe600;
   -webkit-text-stroke: 1.8px #081033;
@@ -323,7 +323,7 @@ button {
 .deal-copy--coffee span:last-child {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.45rem;
+  font-size: 1.15rem;
   line-height: 0.95;
   color: #ffffff;
   -webkit-text-stroke: 1.8px #081033;
@@ -373,7 +373,7 @@ button {
 .deal-copy--pets {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.8rem;
+  font-size: 1.35rem;
   line-height: 0.9;
   color: #ffffff;
   -webkit-text-stroke: 1.8px #081033;
@@ -392,7 +392,7 @@ button {
 .deal-copy--entertainment span:nth-child(2) {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   line-height: 0.95;
   color: #ffffff;
   -webkit-text-stroke: 1.5px #081033;
@@ -403,7 +403,7 @@ button {
   margin-top: 1px;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 0.65rem;
+  font-size: 0.58rem;
   line-height: 0.95;
   color: #ffe600;
   -webkit-text-stroke: 1.5px #081033;
@@ -421,7 +421,7 @@ button {
 .deal-copy--shopping span:first-child {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   line-height: 0.95;
   color: #ffe600;
   -webkit-text-stroke: 1.6px #081033;
@@ -431,7 +431,7 @@ button {
 .deal-copy--shopping span:last-child {
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   line-height: 0.95;
   color: #ffffff;
   -webkit-text-stroke: 1.5px #081033;

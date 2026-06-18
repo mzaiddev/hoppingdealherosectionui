@@ -42,7 +42,7 @@ const cards: DealCard[] = [
     y: 315,
     width: 111,
     height: 80,
-    rotate: -4,
+    rotate: -7,
     color: "#f2760e",
     labelColor: "#124aa0",
     badgeColor: "#c52d30",
@@ -89,66 +89,66 @@ const cards: DealCard[] = [
     labelColor: "#a81d32",
     badgeColor: "#5022c3",
   },
-  {
-    key: "local",
-    label: "LOCAL SERVICES",
-    kind: "local",
-    icon: "pin",
-    x: 51,
-    y: 493,
-    width: 96,
-    height: 61,
-    rotate: -4,
-    color: "#1c72e8",
-    labelColor: "#153784",
-    badgeColor: "#1767de",
-    compact: true,
-  },
-  {
-    key: "pets",
-    label: "PETS",
-    kind: "pets",
-    icon: "paw",
-    x: 161,
-    y: 491,
-    width: 93,
-    height: 61,
-    rotate: 0,
-    color: "#c86610",
-    labelColor: "#842c10",
-    badgeColor: "#f07d20",
-    compact: true,
-  },
-  {
-    key: "entertainment",
-    label: "ENTERTAINMENT & ARTS",
-    kind: "entertainment",
-    icon: "theater",
-    x: 272,
-    y: 492,
-    width: 91,
-    height: 61,
-    rotate: 0,
-    color: "#d02d21",
-    labelColor: "#671114",
-    badgeColor: "#d64230",
-    compact: true,
-  },
-  {
-    key: "shopping",
-    label: "ONLINE SHOPPING",
-    kind: "shopping",
-    icon: "cart",
-    x: 384,
-    y: 490,
-    width: 95,
-    height: 63,
-    rotate: 4,
-    color: "#145cdb",
-    labelColor: "#2267d9",
-    badgeColor: "#125ed7",
-    compact: true,
-  },
+  // {
+  //   key: "local",
+  //   label: "LOCAL SERVICES",
+  //   kind: "local",
+  //   icon: "pin",
+  //   x: 51,
+  //   y: 493,
+  //   width: 96,
+  //   height: 61,
+  //   rotate: -4,
+  //   color: "#1c72e8",
+  //   labelColor: "#153784",
+  //   badgeColor: "#1767de",
+  //   compact: true,
+  // },
+  // {
+  //   key: "pets",
+  //   label: "PETS",
+  //   kind: "pets",
+  //   icon: "paw",
+  //   x: 161,
+  //   y: 491,
+  //   width: 93,
+  //   height: 61,
+  //   rotate: 0,
+  //   color: "#c86610",
+  //   labelColor: "#842c10",
+  //   badgeColor: "#f07d20",
+  //   compact: true,
+  // },
+  // {
+  //   key: "entertainment",
+  //   label: "ENTERTAINMENT & ARTS",
+  //   kind: "entertainment",
+  //   icon: "theater",
+  //   x: 272,
+  //   y: 492,
+  //   width: 91,
+  //   height: 61,
+  //   rotate: 0,
+  //   color: "#d02d21",
+  //   labelColor: "#671114",
+  //   badgeColor: "#d64230",
+  //   compact: true,
+  // },
+  // {
+  //   key: "shopping",
+  //   label: "ONLINE SHOPPING",
+  //   kind: "shopping",
+  //   icon: "cart",
+  //   x: 384,
+  //   y: 490,
+  //   width: 95,
+  //   height: 63,
+  //   rotate: 4,
+  //   color: "#145cdb",
+  //   labelColor: "#2267d9",
+  //   badgeColor: "#125ed7",
+  //   compact: true,
+  // },
 ];
 
 function pct(value: number, base: number) {
@@ -213,51 +213,20 @@ function getDarkColor(key: string, fallback: string) {
   return CARD_THEMES[key]?.dark || fallback;
 }
 
-const STAR_PATH = "M 0,-3.5 L 0.97,-1.02 L 3.56,-1.02 L 1.48,0.5 L 2.27,3.08 L 0,1.55 L -2.27,3.08 L -1.48,0.5 L -3.56,-1.02 L -0.97,-1.02 Z";
+const STAR_PATH =
+  "M 0,-3.5 L 0.97,-1.02 L 3.56,-1.02 L 1.48,0.5 L 2.27,3.08 L 0,1.55 L -2.27,3.08 L -1.48,0.5 L -3.56,-1.02 L -0.97,-1.02 Z";
 
 function getStarsForCard(key: string, width: number, height: number) {
-  const relativeStars: Record<string, { x: number; y: number; scale: number; opacity: number }[]> = {
-    restaurants: [
-      { x: 0.15, y: 0.75, scale: 1.1, opacity: 0.25 },
-      { x: 0.28, y: 0.82, scale: 0.8, opacity: 0.2 },
-      { x: 0.35, y: 0.68, scale: 1.3, opacity: 0.3 },
-      { x: 0.52, y: 0.78, scale: 0.7, opacity: 0.15 },
-      { x: 0.68, y: 0.85, scale: 1.0, opacity: 0.25 },
-      { x: 0.82, y: 0.72, scale: 1.4, opacity: 0.3 },
-      { x: 0.88, y: 0.84, scale: 0.9, opacity: 0.2 },
-      { x: 0.45, y: 0.86, scale: 1.2, opacity: 0.28 },
-    ],
-    beauty: [
-      { x: 0.18, y: 0.72, scale: 0.9, opacity: 0.22 },
-      { x: 0.25, y: 0.84, scale: 1.3, opacity: 0.28 },
-      { x: 0.42, y: 0.78, scale: 0.8, opacity: 0.18 },
-      { x: 0.58, y: 0.85, scale: 1.1, opacity: 0.25 },
-      { x: 0.72, y: 0.70, scale: 1.2, opacity: 0.3 },
-      { x: 0.85, y: 0.80, scale: 0.7, opacity: 0.15 },
-      { x: 0.32, y: 0.88, scale: 1.0, opacity: 0.25 },
-      { x: 0.65, y: 0.74, scale: 1.4, opacity: 0.27 },
-    ],
-    home: [
-      { x: 0.12, y: 0.82, scale: 1.2, opacity: 0.28 },
-      { x: 0.28, y: 0.74, scale: 0.8, opacity: 0.18 },
-      { x: 0.38, y: 0.85, scale: 1.4, opacity: 0.32 },
-      { x: 0.50, y: 0.76, scale: 0.7, opacity: 0.15 },
-      { x: 0.65, y: 0.82, scale: 1.1, opacity: 0.26 },
-      { x: 0.78, y: 0.70, scale: 1.3, opacity: 0.3 },
-      { x: 0.88, y: 0.84, scale: 0.9, opacity: 0.22 },
-      { x: 0.55, y: 0.88, scale: 1.0, opacity: 0.24 },
-    ],
-    coffee: [
-      { x: 0.16, y: 0.70, scale: 1.3, opacity: 0.32 },
-      { x: 0.22, y: 0.84, scale: 0.7, opacity: 0.16 },
-      { x: 0.38, y: 0.76, scale: 1.1, opacity: 0.26 },
-      { x: 0.48, y: 0.88, scale: 1.4, opacity: 0.35 },
-      { x: 0.62, y: 0.80, scale: 0.8, opacity: 0.18 },
-      { x: 0.75, y: 0.86, scale: 1.2, opacity: 0.28 },
-      { x: 0.86, y: 0.72, scale: 1.0, opacity: 0.24 },
-      { x: 0.30, y: 0.82, scale: 0.9, opacity: 0.22 },
-    ],
-  };
+  const relativeStars = [
+    { x: 0.18, y: 0.72, scale: 0.9, opacity: 0.22 },
+    { x: 0.25, y: 0.84, scale: 1.3, opacity: 0.28 },
+    { x: 0.42, y: 0.78, scale: 0.8, opacity: 0.18 },
+    { x: 0.58, y: 0.85, scale: 1.1, opacity: 0.25 },
+    { x: 0.72, y: 0.7, scale: 1.2, opacity: 0.3 },
+    { x: 0.85, y: 0.8, scale: 0.7, opacity: 0.15 },
+    { x: 0.32, y: 0.88, scale: 1.0, opacity: 0.25 },
+    { x: 0.65, y: 0.74, scale: 1.4, opacity: 0.27 },
+  ];
 
   const defaultStars = [
     { x: 0.15, y: 0.78, scale: 0.8, opacity: 0.22 },
@@ -267,8 +236,8 @@ function getStarsForCard(key: string, width: number, height: number) {
     { x: 0.88, y: 0.72, scale: 0.9, opacity: 0.2 },
   ];
 
-  const list = relativeStars[key] || defaultStars;
-  return list.map(s => ({
+  const list = relativeStars || defaultStars;
+  return list.map((s) => ({
     x: s.x * width,
     y: s.y * height,
     scale: s.scale * (width > 100 ? 1.0 : 0.7),
@@ -282,11 +251,11 @@ function getTicketPath(
   notchesCount = 5,
   notchRadius = 5.5,
   cornerRadius = 7,
-  inset = 0
+  inset = 0,
 ) {
   const w = width - inset * 2;
   const h = height - inset * 2;
-  const r = Math.max(0, cornerRadius - inset);
+  const r = Math.max(0, cornerRadius - inset * 0.5);
   const nr = Math.max(0, notchRadius - inset * 0.1);
 
   const yMin = r + nr + 4;
@@ -302,7 +271,7 @@ function getTicketPath(
   }
 
   let d = `M ${inset + r},${inset} L ${width - inset - r},${inset}`;
-  d += ` A ${r},${r} 0 0,1 ${width - inset},${inset + r}`;
+  d += ` A ${r},${r} 0 0,0 ${width - inset},${inset + r}`;
 
   for (let i = 0; i < notchYPositions.length; i++) {
     const yc = inset + notchYPositions[i];
@@ -310,10 +279,10 @@ function getTicketPath(
     d += ` A ${nr},${nr} 0 0,0 ${width - inset},${yc + nr}`;
   }
   d += ` L ${width - inset},${height - inset - r}`;
-  d += ` A ${r},${r} 0 0,1 ${width - inset - r},${height - inset}`;
+  d += ` A ${r},${r} 0 0,0 ${width - inset - r},${height - inset}`;
 
   d += ` L ${inset + r},${height - inset}`;
-  d += ` A ${r},${r} 0 0,1 ${inset},${height - inset - r}`;
+  d += ` A ${r},${r} 0 0,0 ${inset},${height - inset - r}`;
 
   for (let i = notchYPositions.length - 1; i >= 0; i--) {
     const yc = inset + notchYPositions[i];
@@ -321,7 +290,7 @@ function getTicketPath(
     d += ` A ${nr},${nr} 0 0,0 ${inset},${yc - nr}`;
   }
   d += ` L ${inset},${inset + r}`;
-  d += ` A ${r},${r} 0 0,1 ${inset + r},${inset}`;
+  d += ` A ${r},${r} 0 0,0 ${inset + r},${inset}`;
   d += " Z";
 
   return d;
@@ -343,7 +312,7 @@ function TicketCard({ card }: { card: DealCard }) {
   const h = card.height;
   const notches = card.compact ? 4 : 5;
   const notchR = card.compact ? 4.0 : 5.5;
-  const cornerR = card.compact ? 5 : 7;
+  const cornerR = card.compact ? 6.5 : 8.0;
 
   const outerPath = getTicketPath(w, h, notches, notchR, cornerR, 0);
   const innerPath = getTicketPath(w, h, notches, notchR, cornerR, 3.5);
@@ -363,9 +332,18 @@ function TicketCard({ card }: { card: DealCard }) {
         preserveAspectRatio="none"
       >
         <defs>
-          <linearGradient id={`grad-${card.key}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id={`grad-${card.key}`}
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor={getLightColor(card.key, card.color)} />
-            <stop offset="100%" stopColor={getDarkColor(card.key, card.color)} />
+            <stop
+              offset="100%"
+              stopColor={getDarkColor(card.key, card.color)}
+            />
           </linearGradient>
           <clipPath id={`clip-${card.key}`}>
             <path d={outerPath} />
@@ -374,7 +352,12 @@ function TicketCard({ card }: { card: DealCard }) {
 
         <g clipPath={`url(#clip-${card.key})`}>
           <path d={outerPath} fill={`url(#grad-${card.key})`} />
-          <path d={`M 0,0 L ${w},0 L 0,${h} Z`} fill="white" opacity="0.08" pointerEvents="none" />
+          <path
+            d={`M 0,0 L ${w},0 L 0,${h} Z`}
+            fill="white"
+            opacity="0.08"
+            pointerEvents="none"
+          />
           {starsList.map((star, idx) => (
             <path
               key={idx}
@@ -384,11 +367,20 @@ function TicketCard({ card }: { card: DealCard }) {
               opacity={star.opacity}
             />
           ))}
-          <path d={outerPath} fill="black" opacity="0.14" style={{ mixBlendMode: "multiply" }} />
+          <path
+            d={outerPath}
+            fill="black"
+            opacity="0.14"
+            style={{ mixBlendMode: "multiply" }}
+          />
         </g>
         <path
           d={innerPath}
-          stroke={card.key === "coffee" ? "rgba(255, 255, 120, 0.4)" : "rgba(255, 255, 255, 0.42)"}
+          stroke={
+            card.key === "coffee"
+              ? "rgba(255, 255, 120, 0.4)"
+              : "rgba(255, 255, 255, 0.42)"
+          }
           strokeWidth="1.2"
           strokeDasharray="2,2"
           fill="none"
@@ -398,7 +390,11 @@ function TicketCard({ card }: { card: DealCard }) {
 
       <div className="ticket-body">
         <div className="ticket-label">{card.label}</div>
-        <DealCopy kind={card.kind} />
+        {/* <DealCopy kind={card.kind} /> */}
+        <div className="deal-copy deal-copy--coffee">
+          <span className="yellow">SUPER</span>
+          <span>SAVINGS</span>
+        </div>
       </div>
       <div className="ticket-badge" aria-hidden="true">
         <BadgeIcon name={card.icon} />
